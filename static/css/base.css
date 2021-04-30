@@ -1,0 +1,191 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#carousel_section1{
+   height: 100vh;
+   background-image: url('/static/images/doctors.png');
+   background-repeat: no-repeat;
+   background-size: 45%;
+   background-position:auto;
+   background-color: rgba(69, 75, 64, 0.178);
+   overflow: hidden;
+}
+
+.card_container{
+   background-color: rgba(69, 75, 64, 0.178);
+   font-family: 'Shadows Into Light', cursive;
+}
+
+#serviceProvider_container{
+    background-color: rgba(235, 217, 217, 0.74);
+}
+
+.text_info{
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgba(136, 212, 206, 0.6);
+    padding: 1rem;
+    border-radius: 8%;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.select_place{
+    background-color: rgba(136, 212, 206, 0.6);
+    padding: 1rem;
+    border-radius: 8%;
+    border: 1px solid black;
+    margin-top: 10%;
+    font-family: 'Shadows Into Light', cursive;
+    
+}
+
+ .animate1{
+    font-family: 'Shadows Into Light', cursive;
+    width: 0;
+    animation: animate_doc 5s linear infinite;
+}
+
+@keyframes animate_doc{
+    10%{
+        width: 10%;
+    }
+    50%{
+        width: 50%;
+    }
+   
+    75%{
+        width: 70%;
+    } 
+
+}
+
+
+footer{
+    font-family: 'Shadows Into Light', cursive;
+    margin: auto;
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-family: 'Shadows Into Light', cursive;
+
+}
+
+#top{
+    background-color:#626eda;
+    border-radius: 50%;
+    border: none;
+    /* margin-top: ; */
+    width: 60px;
+    height: 60px;
+    color: white;
+    float: right;
+    position: sticky;
+    bottom: 0px;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#arrow{
+    height: 400px;
+}
+
+.Register{
+    display: flex;
+    padding: 40px;
+    margin-top: 20px;
+
+}
+
+.Register>a{
+justify-content: center;
+align-items: center;
+text-decoration: none;
+text-align: center;
+padding: 10px 20px;
+border-radius: 18px;
+border: 1px solid black;
+background-color: rgba(136, 212, 206, 0.5);
+font-family: 'Shadows Into Light', cursive;
+color: black;
+backdrop-filter: 0.5;
+}
+.Register>a:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    background-color: rgba(136, 212, 206, 1);
+    color: black;
+
+}
+
+@media screen and (max-width: 480px) {
+    .animate1{
+        display: none;
+  }
+#carousel_section1{
+    overflow: auto;
+    background-size: 100%;
+
+}
+#arrow{
+    display: none;
+}
+.card_container{
+    padding: 0px;
+} 
+.Register{
+    padding: 10px;
+}
+.Register>a{
+    background-color:rgba(136, 212, 206, 0.6);
+    padding: 5px;
+}
+}
+
+
+
+
+  
+.anchor{
+    text-decoration: none;
+    color: white;
+    
+}
+
+/* css for tiffin.html */
+
+#t_image{
+    width: 120px;
+    height: 80px;
+
+}
+
+#meal_for_all{
+    font-family: 'Shadows Into Light', cursive;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+
+}
+
+#bg_food{
+    /* background-image: url('/static/images/cov_bg.png'); */
+    background-size:auto;
+    background-color: rgba(69, 75, 64, 0.178);
+    z-index: -1;
+    /* background-size: cover; */
+    background-repeat: repeat;
+
+}
+
+
+
+
+

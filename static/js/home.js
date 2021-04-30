@@ -1,0 +1,14 @@
+$('#serviceForm').submit(function(e){
+    e.preventDefault()
+    $.ajax({
+        method:'POST',
+        url:'/register',
+        data:$(this).serializeArray()
+    }).done(function(response){
+        $('#serviceForm').trigger('reset')
+        console.log(response)
+        $('#serviceResponse').html(response)
+    }).fail(function(response){
+        console.log(response)
+    })
+})

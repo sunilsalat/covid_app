@@ -1,0 +1,174 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/base.css' %}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <title>Covid Care</title>
+
+</head>
+
+<body>
+
+
+  <!-- carousle section -->
+  <section class="container-fluid" id="carousel_section1">
+    <div class="row mx-atuo ">
+
+      <div class=" col-lg-5  p-4 mx-auto">
+
+
+        <div class="row mx-auto " id="arrow">
+          <div class=" col-sm-3  ">
+            <img src="{% static '/images/arrow.png' %}" alt="" srcset="">
+          </div>
+          <div class="col-sm-8 m-0 p-0">
+            <p class="animate1">Help us by Vaccinating Yourself ....! </p>
+          </div>
+        </div>
+        <div class="Register">
+          <!-- Button trigger modal -->
+
+          <a class="mx-auto " data-bs-toggle="modal" data-bs-target="#exampleModal">Register As Service
+            Provider,(Tiffin, O2)</a>
+        </div>
+
+
+      </div>
+
+      <div class="col-lg-5 p-3 mx-auto">
+        <div class="text_info mt-3">
+          <h1>You can help us as well </h1>
+          <p class="pt-3" style="font-family: 'Shadows Into Light', cursive;">" Virus has not gone anywhere it is just
+            waiting for right condition to spread ,
+            Don't be a contributor, may be your are healthy but the person who is getting infected , might not be
+            Stop the mass gathering, Be responsible do not organise events and functions. "
+          <h5># stop the mutation don't let the virus  evolve </h5>
+          <h5># Vaccinate your family, Vaccine neutralize the virus and reduce the risk of death <a href="https://selfregistration.cowin.gov.in/">Register Now</a></h5>
+           
+          </p>
+        </div>
+
+        <div class="select_place  ">
+          <div class="my-2">
+            <h4>Find Essentials Near You</h4>
+          </div>
+          <hr>
+          <div>
+            <form action="{% url 'covid_crm:findfood' %}" method="POST" class="d-flex">
+              {% csrf_token %}
+              <input class="form-control me-2" name="find_food" type="text" placeholder="Search" aria-label="Search" required>
+              <button class="btn btn-outline-success" type="submit">Find food</button>
+            </form>
+
+            <form action="{% url 'covid_crm:findoxygen' %}" method="POST" class="d-flex my-2">
+              {% csrf_token %}
+              <input class="form-control me-2" type="text" name="find_O2" placeholder="Search" aria-label="Search" required>
+              <button class="btn btn-outline-success" type="submit">Find o2</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- prediction chart -->
+  <div class=" my-2 mx-auto p-2 card_container ">
+    <p class="mb-4">Data show daily covid_19 cases in india <span style="float: right;">{{date}}</span> </p>
+    {% include 'corona_april.html' %}
+  </div>
+
+  <footer class="container-fluid ">
+    <div class="row">
+      <div class="col mx-auto">
+        <div>
+          <p>Contact At:</p>
+        </div>
+        <hr>
+        <div class="mx-auto">
+          <a class="anchor" href="https://wa.me/9016703350"> <img class="icon" src="{% static '/images/whatsapp.png' %}"
+              alt="" srcset=""></a>
+          <a class="anchor" href="mailto:sunilsalat@yahoo.com"> <img class="icon" src="{% static '/images/mail.png' %}"
+              alt="" srcset=""></a>
+          <a class="anchor" href="https://www.linkedin.com/in/sunil-salat-31a692b1/"> <img class="icon" src="{% static '/images/linkdin.png' %}"
+              alt="" srcset=""></a>
+        </div>
+        <p>No Profit ,No commission protal, Register as a Service Provider, Help others to fight pandemic</p>
+        <p>Seller may or may not charge for their services</p>
+        <p>Contact for any query</p>
+        <small><i class="fas fa-copyright"> T&C applied</i></small>
+        
+      </div>
+
+    </div>
+    <button id="top"><i class="fas fa-arrow-up"> </i>Top</button>
+
+
+  </footer>
+
+  <!-- jumbotron -->
+
+  <!-- Modal -->
+  <div style="    font-family: 'Shadows Into Light', cursive;" class="modal fade" id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register As a service provider,(Tiffin, O2)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+
+            <form id="serviceForm" action="{% url 'covid_crm:register' %}" method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+              <!-- <input  class="mb-1"  type="text" name="first_name" id="" class="form-control" placeholder="First Name" aria-describedby="helpId" required >
+            <input  class="mb-1" type="text" name="last_name" id="" class="form-control" placeholder="Last Name" aria-describedby="helpId"  required >
+            <input  class="mb-1" type="text" name="number" id="" class="form-control" placeholder="Mobile" aria-describedby="helpId" pattern="[6789][0-9]{9}" title="Please enter valid phone number" required>
+            <input class="mb-1" type="email" name="email" id="" class="form-control" placeholder="Email Address" aria-describedby="helpId" required>
+            <div class="form-group mt-2">
+              <label for="Your Offering">food/Oxygen:</label>
+              <select class="form-control" name="Offering" id="Your Offering">
+                <option>Food supplier</option>
+                <option>Oxygen supplier</option>
+              </select> -->
+          </div>
+          <p class="mt-2" id="helpId" class="text-muted">Share your details with us , We will get back to you soon</p>
+          <p id="serviceResponse"></p>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+
+  <script src="{% static '/js/home.js' %}"></script>
+
+
+
+</body>
+
+</html>
